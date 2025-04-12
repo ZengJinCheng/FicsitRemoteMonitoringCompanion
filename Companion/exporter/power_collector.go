@@ -20,6 +20,7 @@ type PowerCollector struct {
 
 type PowerDetails struct {
 	CircuitGroupId      float64 `json:"CircuitGroupID"`
+	PowerProduction       float64 `json:"PowerProduction"`
 	PowerConsumed       float64 `json:"PowerConsumed"`
 	PowerCapacity       float64 `json:"PowerCapacity"`
 	PowerMaxConsumed    float64 `json:"PowerMaxConsumed"`
@@ -84,6 +85,7 @@ func (c *PowerCollector) Collect(frmAddress string, sessionName string) {
 		c.metricsDropper.CacheFreshMetricLabel(prometheus.Labels{"url": frmAddress, "session_name": sessionName, "circuit_id": circuitId})
 		PowerConsumed.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.PowerConsumed)
 		PowerCapacity.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.PowerCapacity)
+		PowerProduction.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.PowerProduction)
 		PowerMaxConsumed.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.PowerMaxConsumed)
 		BatteryDifferential.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.BatteryDifferential)
 		BatteryPercent.WithLabelValues(circuitId, frmAddress, sessionName).Set(d.BatteryPercent)
