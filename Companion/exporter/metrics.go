@@ -61,6 +61,13 @@ var (
 		"circuit_id",
 	})
 
+	PowerProduction = RegisterNewGaugeVec(prometheus.GaugeOpts{
+		Name: "power_production",
+		Help: "Power production on selected power circuit",
+	}, []string{
+		"circuit_id",
+	})
+
 	PowerMaxConsumed = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "power_max_consumed",
 		Help: "Maximum Power that can be consumed on selected power circuit",
