@@ -38,6 +38,7 @@ func NewPowerCollector(endpoint string) *PowerCollector {
 		metricsDropper: NewMetricsDropper(
 			PowerConsumed,
 			PowerCapacity,
+			PowerProduction,
 			PowerMaxConsumed,
 			BatteryDifferential,
 			BatteryPercent,
