@@ -20,7 +20,7 @@ type PowerCollector struct {
 
 type PowerDetails struct {
 	CircuitGroupId      float64 `json:"CircuitGroupID"`
-	PowerProduction       float64 `json:"PowerProduction"`
+	PowerProduction     float64 `json:"PowerProduction"`
 	PowerConsumed       float64 `json:"PowerConsumed"`
 	PowerCapacity       float64 `json:"PowerCapacity"`
 	PowerMaxConsumed    float64 `json:"PowerMaxConsumed"`
