@@ -7,29 +7,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var (
-	PortalPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "portal_power",
-		Help: "portal power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-
-	PortalPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "portal_power_max",
-		Help: "portal max power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-)
-
 type PortalCollector struct {
 	endpoint string
-}
-
-type PortalDetails struct {
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
 }
 
 func NewPortalCollector(endpoint string) *PortalCollector {

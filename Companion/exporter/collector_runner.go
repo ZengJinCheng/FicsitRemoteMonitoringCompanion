@@ -9,11 +9,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-func SanitizeSessionName(sessionName string) string {
-	re := regexp.MustCompile(`[^\w\s]`)
-	return re.ReplaceAllString(sessionName, "")
-}
-
 type CollectorRunner struct {
 	collectors  []Collector
 	ctx         context.Context
@@ -27,8 +22,10 @@ type Collector interface {
 	DropCache()
 }
 
-type SessionInfo struct {
-	SessionName string `json:"SessionName"`
+
+func SanitizeSessionName(sessionName string) string {
+	re := regexp.MustCompile(`[^\w\s]`)
+	return re.ReplaceAllString(sessionName, "")
 }
 
 func NewCollectorRunner(ctx context.Context, frmBaseUrl string, collectors ...Collector) *CollectorRunner {

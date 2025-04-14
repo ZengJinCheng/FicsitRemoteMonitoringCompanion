@@ -7,29 +7,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var (
-	PumpPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "pump_power",
-		Help: "pump power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-
-	PumpPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "pump_power_max",
-		Help: "pump max power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-)
-
 type PumpCollector struct {
 	endpoint string
-}
-
-type PumpDetails struct {
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
 }
 
 func NewPumpCollector(endpoint string) *PumpCollector {

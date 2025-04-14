@@ -7,29 +7,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var (
-	ExtractorPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "extractor_power",
-		Help: "extractor power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-
-	ExtractorPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "extractor_power_max",
-		Help: "extractor max power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-)
-
 type ExtractorCollector struct {
 	endpoint string
-}
-
-type ExtractorDetails struct {
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
 }
 
 func NewExtractorCollector(endpoint string) *ExtractorCollector {

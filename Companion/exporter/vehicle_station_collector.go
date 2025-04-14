@@ -9,12 +9,6 @@ type VehicleStationCollector struct {
 	endpoint string
 }
 
-type VehicleStationDetails struct {
-	Name      string    `json:"Name"`
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
-}
-
 func NewVehicleStationCollector(endpoint string) *VehicleStationCollector {
 	return &VehicleStationCollector{
 		endpoint: endpoint,

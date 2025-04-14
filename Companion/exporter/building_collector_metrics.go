@@ -7,7 +7,7 @@ import (
 var (
 	MachineItemsProducedPerMin = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "machine_items_produced_per_min",
-		Help: "How much of an item a building is producing",
+		Help: "建筑物当前每分钟生产多少物品",
 	}, []string{
 		"item_name",
 		"machine_name",
@@ -18,7 +18,7 @@ var (
 
 	MachineItemsProducedEffiency = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "machine_items_produced_pc",
-		Help: "The efficiency with which a building is producing an item",
+		Help: "建筑物生产物品的效率",
 	}, []string{
 		"item_name",
 		"machine_name",
@@ -28,14 +28,14 @@ var (
 	})
 	FactoryPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "factory_power",
-		Help: "Power draw from factory machines in MW. Does not include extractors.",
+		Help: "工厂机器的电力消耗，单位为 MW。不包括提取设备。.",
 	}, []string{
 		"circuit_id",
 	})
 
 	FactoryPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "factory_power_max",
-		Help: "Max power draw from factory machines in MW. Does not include extractors.",
+		Help: "工厂机器的最大电力消耗，单位为 MW。不包括提取器。",
 	}, []string{
 		"circuit_id",
 	})

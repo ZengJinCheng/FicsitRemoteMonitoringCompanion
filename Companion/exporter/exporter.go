@@ -29,20 +29,21 @@ func NewPrometheusExporter(frmApiHosts []string) *PrometheusExporter {
 	collectorRunners := []*CollectorRunner{}
 
 	for _, frmApiHost := range frmApiHosts {
-		productionCollector := NewProductionCollector("/getProdStats")
-		powerCollector := NewPowerCollector("/getPower")
 		buildingCollector := NewFactoryBuildingCollector("/getFactory")
-		vehicleCollector := NewVehicleCollector("/getVehicles")
-		droneCollector := NewDroneStationCollector("/getDroneStation")
-		vehicleStationCollector := NewVehicleStationCollector("/getTruckStation")
-		trainCollector := NewTrainCollector("/getTrains")
-		trainStationCollector := NewTrainStationCollector("/getTrainStation")
-		resourceSinkCollector := NewResourceSinkCollector("/getResourceSinkBuilding", "/getResourceSink", "/getExplorationSink")
+		hypertubeCollector := NewHypertubeCollector("/getHypertube")
 		pumpCollector := NewPumpCollector("/getPump")
 		extractorCollector := NewExtractorCollector("/getExtractor")
-		portalCollector := NewPortalCollector("/getPortal")
-		hypertubeCollector := NewHypertubeCollector("/getHypertube")
 		frackingCollector := NewFrackingCollector("/getFrackingActivator")
+		portalCollector := NewPortalCollector("/getPortal")
+		resourceSinkCollector := NewResourceSinkCollector("/getResourceSinkBuilding", "/getResourceSink", "/getExplorationSink")
+		droneCollector := NewDroneStationCollector("/getDroneStation")
+		trainStationCollector := NewTrainStationCollector("/getTrainStation")
+		vehicleStationCollector := NewVehicleStationCollector("/getTruckStation")
+		vehicleCollector := NewVehicleCollector("/getVehicles")
+		trainCollector := NewTrainCollector("/getTrains")
+		productionCollector := NewProductionCollector("/getProdStats")
+		powerCollector := NewPowerCollector("/getPower")
+
 		collectorRunners = append(collectorRunners, NewCollectorRunner(ctx, frmApiHost, productionCollector, powerCollector, buildingCollector, vehicleCollector, trainCollector, droneCollector, vehicleStationCollector, trainStationCollector, resourceSinkCollector, pumpCollector, extractorCollector, portalCollector, hypertubeCollector, frackingCollector))
 	}
 

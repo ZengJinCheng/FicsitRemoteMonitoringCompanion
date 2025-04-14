@@ -7,29 +7,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var (
-	HypertubePower = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "hypertube_power",
-		Help: "hypertube power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-
-	HypertubePowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "hypertube_power_max",
-		Help: "hypertube max power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-)
-
 type HypertubeCollector struct {
 	endpoint string
-}
-
-type HypertubeDetails struct {
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
 }
 
 func NewHypertubeCollector(endpoint string) *HypertubeCollector {

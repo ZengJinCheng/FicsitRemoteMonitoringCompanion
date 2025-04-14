@@ -7,29 +7,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var (
-	FrackingPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "fracking_power",
-		Help: "fracking power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-
-	FrackingPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
-		Name: "fracking_power_max",
-		Help: "fracking max power use in MW",
-	}, []string{
-		"circuit_id",
-	})
-)
-
 type FrackingCollector struct {
 	endpoint string
-}
-
-type FrackingDetails struct {
-	Location  Location  `json:"location"`
-	PowerInfo PowerInfo `json:"PowerInfo"`
 }
 
 func NewFrackingCollector(endpoint string) *FrackingCollector {

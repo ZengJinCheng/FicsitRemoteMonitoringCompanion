@@ -7,7 +7,7 @@ import (
 var (
 	DronePortFuelRate = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "drone_port_fuel_rate",
-		Help: "Rate of fuel used",
+		Help: "无人机平台燃料消耗率",
 	}, []string{
 		"id",
 		"home_station",
@@ -15,7 +15,7 @@ var (
 	})
 	DronePortFuelAmount = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "drone_port_fuel_amount",
-		Help: "Amount of fuel in inventory",
+		Help: "无人机平台库存中的燃料量",
 	}, []string{
 		"id",
 		"home_station",
@@ -23,7 +23,7 @@ var (
 	})
 	DronePortRndTrip = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "drone_port_round_trip_seconds",
-		Help: "Recorded drone round trip time in seconds",
+		Help: "记录无人机往返时间（秒）",
 	}, []string{
 		"id",
 		"home_station",
@@ -31,13 +31,13 @@ var (
 	})
 	DronePortPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "drone_port_power",
-		Help: "Drone port power in MW",
+		Help: "无人机平台当前消耗电力，单位为 MW",
 	}, []string{
 		"circuit_id",
 	})
 	DronePortPowerMax = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "drone_port_power_max",
-		Help: "Max drone port power in MW",
+		Help: "无人机平台最大消耗电力，单位为 MW",
 	}, []string{
 		"circuit_id",
 	})
