@@ -13,9 +13,9 @@ import (
 	"syscall"
 	"text/template"
 
-	"github.com/ZengJinCheng/FicsitRemoteMonitoringCompanion/tree/main/Companion/exporter"
-	"github.com/ZengJinCheng/FicsitRemoteMonitoringCompanion/tree/main/Companion/prometheus"
-	"github.com/ZengJinCheng/FicsitRemoteMonitoringCompanion/tree/main/Companion/realtime_map"
+	"github.com/AP-Hunt/FicsitRemoteMonitoringCompanion/Companion/exporter"
+	"github.com/AP-Hunt/FicsitRemoteMonitoringCompanion/Companion/prometheus"
+	"github.com/AP-Hunt/FicsitRemoteMonitoringCompanion/Companion/realtime_map"
 )
 
 var Version = "0.0.0-dev"
