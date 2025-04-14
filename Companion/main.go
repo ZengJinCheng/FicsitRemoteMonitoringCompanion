@@ -13,9 +13,9 @@ import (
 	"syscall"
 	"text/template"
 
-	"FicsitRemoteMonitoringCompanion/Companion/exporter"
-	"FicsitRemoteMonitoringCompanion/Companion/prometheus"
-	"FicsitRemoteMonitoringCompanion/Companion/realtime_map"
+	"Companion/exporter"
+	"Companion/prometheus"
+	"Companion/realtime_map"
 )
 
 var Version = "0.0.0-dev"
