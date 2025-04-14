@@ -18,12 +18,12 @@ http.createServer(async (req, res) => {
 
 const machineItemsProducedPerMinute = new prom.Gauge({
     name: "machine_items_produced_per_min", 
-    help: "How much of an item a building is producing",
+    help: "建筑物当前每分钟生产多少物品",
     labelNames: ["item_name", "machine_name", "x", "y", "z"]
 });
 const machineItemsProducedEfficiency = new prom.Gauge({
     name: "machine_items_produced_pc", 
-    help: "The efficiency with which a building is producing an item",
+    help: "建筑物生产物品的效率",
     labelNames: ["item_name", "machine_name", "x", "y", "z"]
 });
 

@@ -48,57 +48,57 @@ The [Prometheus metrics server](https://prometheus.io/) allows you to [explore t
     <tbody>
         <tr>
             <td>drone_port_fuel_rate</td>
-            <td>Rate of fuel used</td>
+            <td>无人机平台燃料消耗率</td>
             <td>id, home_station, fuel_name, url, session_name</td>
         </tr>
         <tr>
             <td>drone_port_fuel_amount</td>
-            <td>Amount of fuel in inventory</td>
+            <td>无人机平台库存中的燃料量</td>
             <td>id, home_station, fuel_name, url, session_name</td>
         </tr>
         <tr>
             <td>drone_port_round_trip_seconds</td>
-            <td>Recorded drone round trip time in seconds</td>
+            <td>记录无人机往返时间（秒）</td>
             <td>id, home_station, paired_station, url, session_name</td>
         </tr>
         <tr>
             <td>drone_port_power</td>
-            <td>Drone port power in MW</td>
+            <td>无人机平台当前消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>drone_port_power_max</td>
-            <td>Max drone port power in MW</td>
+            <td>无人机平台最大消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>extractor_power</td>
-            <td>extractor power use in MW</td>
+            <td>提取器当前消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>extractor_power_max</td>
-            <td>extractor max power use in MW</td>
+            <td>提取器最大消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>machine_items_produced_per_min</td>
-            <td>How much of an item a building is producing</td>
+            <td>建筑物当前每分钟生产多少物品</td>
             <td>item_name, machine_name, x, y, z, url, session_name</td>
         </tr>
         <tr>
             <td>machine_items_produced_pc</td>
-            <td>The efficiency with which a building is producing an item</td>
+            <td>建筑物生产物品的效率</td>
             <td>item_name, machine_name, x, y, z, url, session_name</td>
         </tr>
         <tr>
             <td>factory_power</td>
-            <td>Power draw from factory machines in MW. Does not include extractors.</td>
+            <td>工厂机器的电力消耗，单位为 MW。不包括提取设备。</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>factory_power_max</td>
-            <td>Max power draw from factory machines in MW. Does not include extractors.</td>
+            <td>工厂机器的最大电力消耗，单位为 MW。不包括提取器。</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
@@ -123,127 +123,127 @@ The [Prometheus metrics server](https://prometheus.io/) allows you to [explore t
         </tr>
         <tr>
             <td>item_production_capacity_per_min</td>
-            <td>The factory's capacity for the production of an item, per minute</td>
+            <td>物品每分钟生产效率百分比</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>item_production_capacity_pc</td>
-            <td>The percentage of an item's production capacity being used</td>
+            <td>物品理论最大产量</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>item_consumption_capacity_per_min</td>
-            <td>The factory's capacity for the consumption of an item, per minute</td>
+            <td>物品每分钟消耗效率百分比</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>item_consumption_capacity_pc</td>
-            <td>The percentage of an item's consumption capacity being used</td>
+            <td>物品理论最大消耗量</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>items_produced_per_min</td>
-            <td>The number of an item being produced, per minute</td>
+            <td>物品当前每分钟产量</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>items_consumed_per_min</td>
-            <td>The number of an item being consumed, per minute</td>
+            <td>物品当前消耗量</td>
             <td>item_name, url, session_name</td>
         </tr>
         <tr>
             <td>power_consumed</td>
-            <td>Power consumed on selected power circuit</td>
+            <td>选定电路的当前电力消耗</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>power_capacity</td>
-            <td>Power capacity on selected power circuit</td>
+            <td>选定电路的电力理论最大值</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>power_max_consumed</td>
-            <td>Maximum Power that can be consumed on selected power circuit</td>
+            <td>选定电路的最小消耗电量(需要这么多才能启动)</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>battery_differential</td>
-            <td>Amount of power in excess/deficit going into or out of the battery bank(s). Positive = Charges batteries, Negative = Drains batteries</td>
+            <td>电池组输入或输出的电量盈余或不足。正值表示给电池充电，负值表示消耗电池电量。</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>battery_percent</td>
-            <td>Percentage of battery bank(s) charge</td>
+            <td>电池组充电百分比</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>battery_capacity</td>
-            <td>Total capacity of battery bank(s)</td>
+            <td>电池组总容量</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>battery_seconds_empty</td>
-            <td>Seconds until Batteries are empty</td>
+            <td>电池耗尽还有多少秒</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>battery_seconds_full</td>
-            <td>Seconds until Batteries are full</td>
+            <td>电池充满所需秒数</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>fuse_triggered</td>
-            <td>Has the fuse been triggered</td>
+            <td>保险丝被触发了吗</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>portal_power</td>
-            <td>portal power use in MW</td>
+            <td>传送门当前消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>portal_power_max</td>
-            <td>portal max power use in MW</td>
+            <td>传送门最大消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>pump_power</td>
-            <td>pump power use in MW</td>
+            <td>水泵当前消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>pump_power_max</td>
-            <td>pump max power use in MW</td>
+            <td>水泵最大消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_power</td>
-            <td>AWESOME sink power use in MW</td>
+            <td>AWESOME当前消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_power_max</td>
-            <td>AWESOME sink max power use in MW</td>
+            <td>AWESOME最大消耗电力，单位为 MW</td>
             <td>circuit_id, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_total_points</td>
-            <td>AWESOME sink total points</td>
+            <td>AWESOME 累计积分总数</td>
             <td>sink_type, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_points_to_coupon</td>
-            <td>AWESOME sink points to next coupon</td>
+            <td>AWESOME 下一张优惠劵的积分数</td>
             <td>sink_type, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_percent</td>
-            <td>AWESOME sink percent to next coupon</td>
+            <td>AWESOME 下一张优惠券的进度百分比</td>
             <td>sink_type, url, session_name</td>
         </tr>
         <tr>
             <td>resource_sink_collected_coupons</td>
-            <td>AWESOME sink collected coupons</td>
+            <td>AWESOME 里的优惠券数量</td>
             <td>url, session_name</td>
         </tr>
         <tr>

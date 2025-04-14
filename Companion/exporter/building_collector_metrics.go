@@ -28,7 +28,7 @@ var (
 	})
 	FactoryPower = RegisterNewGaugeVec(prometheus.GaugeOpts{
 		Name: "factory_power",
-		Help: "工厂机器的电力消耗，单位为 MW。不包括提取设备。.",
+		Help: "工厂机器的电力消耗，单位为 MW。不包括提取设备。",
 	}, []string{
 		"circuit_id",
 	})
