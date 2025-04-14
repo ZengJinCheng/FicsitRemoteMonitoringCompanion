@@ -3,8 +3,6 @@ package exporter
 import (
 	"log"
 	"strconv"
-
-	"github.com/prometheus/client_golang/prometheus"
 )
 
 type HypertubeCollector struct {

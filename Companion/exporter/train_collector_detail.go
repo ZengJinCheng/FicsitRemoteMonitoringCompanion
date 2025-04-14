@@ -1,5 +1,8 @@
 package exporter
 
+import (
+	"time"
+)
 
 type TimeTable struct {
 	StationName string `json:"StationName"`

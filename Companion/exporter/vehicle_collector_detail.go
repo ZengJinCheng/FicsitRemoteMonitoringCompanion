@@ -1,5 +1,9 @@
 package exporter
 
+import (
+	"time"
+)
+
 type VehicleDetails struct {
 	Id           string   `json:"ID"`
 	VehicleType  string   `json:"Name"`
