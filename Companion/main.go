@@ -57,7 +57,7 @@ func main() {
 	if !logStdout {
 		logFile, err := createLogFile()
 		if err != nil {
-			fmt.Printf("error creating log file: %s", err)
+			fmt.Printf("创建日志文件时出错: %s", err)
 			os.Exit(1)
 		}
 		log.Default().SetOutput(logFile)
@@ -84,7 +84,7 @@ func main() {
 		// Create prometheus
 		prom, err = prometheus.NewPrometheusWrapper()
 		if err != nil {
-			fmt.Printf("error preparing prometheus: %s", err)
+			fmt.Printf("准备Prometheus时出错: %s", err)
 			os.Exit(1)
 		}
 	}
@@ -92,7 +92,7 @@ func main() {
 	// Create map server
 	mapServ, err := realtime_map.NewMapServer()
 	if err != nil {
-		fmt.Printf("error preparing dynamic map: %s", err)
+		fmt.Printf("动态地图准备错误: %s", err)
 		os.Exit(1)
 	}
 
@@ -100,7 +100,7 @@ func main() {
 	if !noProm {
 		err = prom.Start()
 		if err != nil {
-			fmt.Printf("error starting prometheus: %s", err)
+			fmt.Printf("启动Prometheus时出错: %s", err)
 			os.Exit(1)
 		}
 	}
@@ -114,18 +114,18 @@ func main() {
 	fmt.Printf(`
 Ficsit Remote Monitoring Companion (v%s)
 
-To access the realtime map visit:
+访问实时地图访问:
 http://localhost:8000/?frmport=8080
 
-    If you have configured Ficsit Remote Monitoring 
-    to use a port other than 8080 for its web server, 
-    change the "frmport" query string parameter to 
-    match the port you chose and refresh the page.
+    如果您已经配置了Ficsit远程监控
+	要为其web服务器使用8080以外的端口，
+	将“frmport”查询字符串参数修改为
+	匹配您选择的端口并刷新页面。
 
-To access metrics in Prometheus visit:
+要访问Prometheus中的指标，请访问:
 http://localhost:9090/
 
-Press Ctrl + C to exit.
+按 Ctrl + C 退出。
 `, Version)
 
 	// Wait for an interrupt signal
@@ -136,21 +136,21 @@ Press Ctrl + C to exit.
 	// Stop the exporter
 	err = promExporter.Stop()
 	if err != nil {
-		fmt.Printf("error stopping prometheus exporter: %s", err)
+		fmt.Printf("停止prometheus导出程序出错: %s", err)
 	}
 
 	// Stop prometheus
 	if !noProm {
 		err = prom.Stop()
 		if err != nil {
-			fmt.Printf("error stopping prometheus: %s", err)
+			fmt.Printf("停止prometheus程序出错: %s", err)
 		}
 	}
 
 	// Stop map
 	mapServ.Stop()
 
-	fmt.Println("Exiting.")
+	fmt.Println("退出。")
 	os.Exit(0)
 }
 
@@ -187,6 +187,6 @@ func generateReadme() {
 		},
 	)
 	if err != nil {
-		fmt.Printf("Error writing readme: %s", err)
+		fmt.Printf("写自述文件错误: %s", err)
 	}
 }

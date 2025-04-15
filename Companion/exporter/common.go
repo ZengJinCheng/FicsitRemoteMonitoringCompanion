@@ -39,13 +39,13 @@ func retrieveData(frmAddress string, details any) error {
 	resp, err := http.Get(frmAddress)
 
 	if err != nil {
-		log.Printf("error fetching statistics from FRM: %s\n", err)
+		log.Printf("从FRM获取统计信息时出错: %s\n", err)
 		return err
 	}
 
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		return fmt.Errorf("non-200 returned when retireving data: %d", resp.StatusCode)
+		return fmt.Errorf("检索数据时返回非200: %d", resp.StatusCode)
 	}
 
 	decoder := json.NewDecoder(resp.Body)

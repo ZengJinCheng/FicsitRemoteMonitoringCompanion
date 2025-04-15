@@ -43,12 +43,12 @@ func (c *CollectorRunner) updateSessionName() {
 	details := SessionInfo{}
 	err := retrieveData(c.frmBaseUrl+"/getSessionInfo", &details)
 	if err != nil {
-		log.Printf("error reading session name from FRM: %s\n", err)
+		log.Printf("从FRM读取会话名时出错: %s\n", err)
 		return
 	}
 	newSessionName := SanitizeSessionName(details.SessionName)
 	if newSessionName != "" && newSessionName != c.sessionName {
-		log.Printf("%s has a new session name: %s\n", c.frmBaseUrl, newSessionName)
+		log.Printf("%s 有新的会话名称: %s\n", c.frmBaseUrl, newSessionName)
 		for _, metric := range RegisteredMetrics {
 			metric.DeletePartialMatch(prometheus.Labels{"url": c.frmBaseUrl, "session_name": c.sessionName})
 		}

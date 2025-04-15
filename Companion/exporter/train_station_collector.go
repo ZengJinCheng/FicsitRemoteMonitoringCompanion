@@ -19,7 +19,7 @@ func (c *TrainStationCollector) Collect(frmAddress string, sessionName string) {
 	details := []TrainStationDetails{}
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
-		log.Printf("error reading train station statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取火车站统计数据出错: %s\n", err)
 		return
 	}
 

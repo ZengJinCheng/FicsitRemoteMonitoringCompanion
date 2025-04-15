@@ -19,7 +19,7 @@ func (c *PortalCollector) Collect(frmAddress string, sessionName string) {
 	details := []PortalDetails{}
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
-		log.Printf("error reading portal statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取传送门统计信息时出错: %s\n", err)
 		return
 	}
 

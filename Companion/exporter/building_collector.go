@@ -27,7 +27,7 @@ func (c *FactoryBuildingCollector) Collect(frmAddress string, sessionName string
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
 		c.metricsDropper.DropStaleMetricLabels()
-		log.Printf("error reading factory buildings from FRM: %s\n", err)
+		log.Printf("从FRM读取工厂建筑错误: %s\n", err)
 		return
 	}
 

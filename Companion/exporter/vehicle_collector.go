@@ -87,7 +87,7 @@ func (c *VehicleCollector) Collect(frmAddress string, sessionName string) {
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
 		c.metricsDropper.DropStaleMetricLabels()
-		log.Printf("error reading vehicle statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取车辆统计数据错误: %s\n", err)
 		return
 	}
 

@@ -23,14 +23,14 @@ func (c *ResourceSinkCollector) Collect(frmAddress string, sessionName string) {
 	buildingDetails := []ResourceSinkDetails{}
 	err := retrieveData(frmAddress+c.buildingEndpoint, &buildingDetails)
 	if err != nil {
-		log.Printf("error reading resource sink details statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取资源回收器详细统计信息时出错: %s\n", err)
 		return
 	}
 
 	globalResourceDetails := []GlobalSinkDetails{}
 	err = retrieveData(frmAddress+c.globalResourceEndpoint, &globalResourceDetails)
 	if err != nil {
-		log.Printf("error reading global resource sink statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取标准点数统计信息时出错: %s\n", err)
 		return
 	}
 
@@ -44,7 +44,7 @@ func (c *ResourceSinkCollector) Collect(frmAddress string, sessionName string) {
 	globalExplorationDetails := []GlobalSinkDetails{}
 	err = retrieveData(frmAddress+c.globalExplorationEndpoint, &globalExplorationDetails)
 	if err != nil {
-		log.Printf("error reading global resource sink statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取DNA点数统计信息时出错: %s\n", err)
 		return
 	}
 

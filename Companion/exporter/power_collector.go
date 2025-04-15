@@ -57,7 +57,7 @@ func (c *PowerCollector) Collect(frmAddress string, sessionName string) {
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
 		c.metricsDropper.DropStaleMetricLabels()
-		log.Printf("error reading power statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取电力统计数据出错: %s\n", err)
 		return
 	}
 

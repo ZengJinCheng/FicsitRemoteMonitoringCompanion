@@ -30,7 +30,7 @@ func (c *ProductionCollector) Collect(frmAddress string, sessionName string) {
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
 		c.metricsDropper.DropStaleMetricLabels()
-		log.Printf("error reading production statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取生产统计信息时出错: %s\n", err)
 		return
 	}
 

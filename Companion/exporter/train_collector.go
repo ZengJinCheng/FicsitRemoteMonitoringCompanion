@@ -105,7 +105,7 @@ func (c *TrainCollector) Collect(frmAddress string, sessionName string) {
 	err := retrieveData(frmAddress+c.endpoint, &details)
 	if err != nil {
 		c.metricsDropper.DropStaleMetricLabels()
-		log.Printf("error reading train statistics from FRM: %s\n", err)
+		log.Printf("从FRM读取火车统计数据时出错: %s\n", err)
 		return
 	}
 
